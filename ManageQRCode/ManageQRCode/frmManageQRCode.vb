@@ -487,7 +487,7 @@ Public Class frmManageQRCode
                 .AddWithValue("@QPK", PK)
                 .AddWithValue("@QURL", txtURL.Text.Trim)
                 .AddWithValue("@QDESC", txtDescription.Text.Trim)
-                .AddWithValue("@DADD", Format(dtpDateAdded.Value, "dd/MM/yyyy"))
+                .AddWithValue("@DADD", Format(Cdate(dtpDateAdded.Value), "dd/MM/yyyy"))
                 .AddWithValue("@LG", chkLogo.Checked)
                 .AddWithValue("@MG", Val(udMargin.Value))
             End With
