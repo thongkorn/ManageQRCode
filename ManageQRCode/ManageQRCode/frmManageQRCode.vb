@@ -158,6 +158,7 @@ Public Class frmManageQRCode
             " SELECT PK, URL, Description, DateAdded, Logo, Margin " & _
             " FROM QRCode " & _
             " WHERE PK = " & PK
+        Try
         If Conn.State = ConnectionState.Closed Then Conn.Open()
         DA = New OleDbDataAdapter(strSQL, Conn)
         DS = New DataSet
@@ -178,6 +179,9 @@ Public Class frmManageQRCode
         '// Change to Edit Mode.
         NewData = False
         Call EditMode()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     ' / --------------------------------------------------------------------------------
