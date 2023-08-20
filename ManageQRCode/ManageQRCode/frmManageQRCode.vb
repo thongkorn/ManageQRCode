@@ -61,7 +61,7 @@ Public Class frmManageQRCode
             Case Keys.F4
                 Call btnDelete_Click(sender, e)
             Case Keys.Escape
-                Call btnDelete_Click(sender, e)
+                If btnDelete.Text = "Cancel - Esc" Then Call NewMode()
         End Select
     End Sub
 
