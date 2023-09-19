@@ -75,7 +75,6 @@ Public Class frmManageQRCode
         Me.TextAlign = Forms.MetroFormTextAlign.Center
         '//
         Me.KeyPreview = True
-        'txtLink.Text = "www.g2gnet.com"
         lblRecordCount.Text = ""
         '//
         Call ConnectDataBase()
