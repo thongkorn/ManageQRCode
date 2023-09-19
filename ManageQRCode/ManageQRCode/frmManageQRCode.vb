@@ -523,7 +523,7 @@ Public Class frmManageQRCode
         If btnDelete.Text = "Delete - F4" Then
             If dgvData.RowCount = 0 Then Exit Sub
             '// Get the Primary Key value to confirm the deletion.
-            Dim iRow As Long = dgvData.Item(0, dgvData.CurrentRow.Index).Value
+            Dim iRow As Integer = dgvData.Item(0, dgvData.CurrentRow.Index).Value
             Dim URL As String = dgvData.Item(1, dgvData.CurrentRow.Index).Value
             Dim Result As Byte = MessageBox.Show("Are you sure you want to delete the data?" & vbCrLf & "URL: " & URL, "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
             If Result = DialogResult.Yes Then
@@ -540,11 +540,11 @@ Public Class frmManageQRCode
                     .Dispose()
                 End With
             End If
+        dgvData.Rows.Clear()
+        Call RetrieveData()
         End If
         '//
         Call NewMode()
-        dgvData.Rows.Clear()
-        Call RetrieveData()
     End Sub
 
     Private Sub lblBrowseLogo_LinkClicked(sender As System.Object, e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lblBrowseLogo.LinkClicked
