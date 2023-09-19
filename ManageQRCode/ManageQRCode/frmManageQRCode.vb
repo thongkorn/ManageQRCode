@@ -520,7 +520,6 @@ Public Class frmManageQRCode
     '// Delete record.
     ' / --------------------------------------------------------------------------------
     Private Sub btnDelete_Click(sender As System.Object, e As System.EventArgs) Handles btnDelete.Click
-        '// If Edit Data Mode
         If btnDelete.Text = "Delete - F4" Then
             If dgvData.RowCount = 0 Then Exit Sub
             '// Get the Primary Key value to confirm the deletion.
