@@ -521,16 +521,9 @@ Public Class frmManageQRCode
     ' / --------------------------------------------------------------------------------
     Private Sub btnDelete_Click(sender As System.Object, e As System.EventArgs) Handles btnDelete.Click
         '// If Edit Data Mode
-        If btnDelete.Text = "Cancel - Esc" Then
-            btnAdd.Enabled = True
-            btnSave.Enabled = True
-            btnDelete.Enabled = True
-            btnDelete.Text = "Delete - F4"
-            btnExit.Enabled = True
-            chkLogo.Checked = False
-        Else
+        If btnDelete.Text = "Delete - F4" Then
             If dgvData.RowCount = 0 Then Exit Sub
-            '// Receive Primary Key value to confirm the deletion.
+            '// Get the Primary Key value to confirm the deletion.
             Dim iRow As Long = dgvData.Item(0, dgvData.CurrentRow.Index).Value
             Dim URL As String = dgvData.Item(1, dgvData.CurrentRow.Index).Value
             Dim Result As Byte = MessageBox.Show("Are you sure you want to delete the data?" & vbCrLf & "URL: " & URL, "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
