@@ -63,10 +63,8 @@ Module modDataBase
     ' / Replace "\bin\debug" with "\"
     ' / Return : C:\My Project\
     Function MyPath(AppPath As String) As String
-        '/ MessageBox.Show(AppPath);
-        AppPath = AppPath.ToLower()
         '/ Return Value
-        MyPath = AppPath.Replace("\bin\debug", "\").Replace("\bin\release", "\").Replace("\bin\x86\debug", "\")
+        MyPath = AppPath.Tolower.Replace("\bin\debug", "\").Replace("\bin\release", "\").Replace("\bin\x86\debug", "\")
         '// If not found folder then put the \ (BackSlash) at the end.
         If Right(MyPath, 1) <> "\" Then MyPath = MyPath & "\"
     End Function
